@@ -5,6 +5,7 @@ import Bank from './pages/Bank/Bank.jsx';
 import Budget from './pages/Budget/Budget.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import Login from './pages/Login/Login.jsx';
+import Message from './pages/Message/Message.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -34,6 +35,7 @@ function App() {
               </ProtectedRoute>
             }>
               <Route index element={<Home />} />
+              <Route path="message" element={<Message />} />
               <Route path="bank" element={<Bank />} />
               <Route path="budget" element={<Budget />} />  
               <Route path="*" element={<NotFound />} />

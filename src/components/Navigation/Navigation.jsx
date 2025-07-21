@@ -7,6 +7,7 @@ function Navigation({ onLogout }) {
             <header>
                 <nav>
                     <NavLink className="item" to="/">Home</NavLink>
+                    <NavLink className="item" to="message">Message</NavLink>
                     <NavLink className="item" to="bank">Bank</NavLink>
                     <NavLink className="item" to="budget">Budget</NavLink>
                     <button onClick={onLogout}>Logout</button>

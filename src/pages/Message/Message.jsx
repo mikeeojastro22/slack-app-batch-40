@@ -10,7 +10,29 @@ function Message() {
     const [message, setMessage] = useState();
 
     const handleSubmit = async (e) => {
-        
+        e.preventDefault();
+        try {
+            const requestBody = {
+                receiver_id: Number(receiver),
+                receiver_class: "User",
+                body: message
+            }
+
+            const requestHeaders = {
+                headers: userHeaders
+            }
+
+            const response = await axios.post(`${API_URL}/messages`, requestBody, requestHeaders);
+            const { data } = response;
+            if(data.data){
+                console.log(data.data);
+                return alert("Successfully sent a message!");
+            }
+        } catch (error) {
+            if(error) {
+                return alert("Cannot send message");
+            }
+        }
     };
 
     return (
